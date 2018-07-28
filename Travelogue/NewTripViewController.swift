@@ -28,6 +28,15 @@ class NewTripViewController: UIViewController {
     }
     
     @IBAction func saveTrip(_ sender: Any) {
+        let trip = Trip(title: titleTextField.text ?? "")
+        
+        do {
+            try trip?.managedObjectContext?.save()
+            
+            self.navigationController?.popViewController(animated: true)
+        } catch {
+            print("Could not save trip")
+        }
     }
 }
 

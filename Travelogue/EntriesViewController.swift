@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreData
+import Foundation
 
 class EntriesViewController: UIViewController {
 
     @IBOutlet weak var entriesTableView: UITableView!
     
     let dateFormatter = DateFormatter()
+    
+    var trip: Trip?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,10 @@ class EntriesViewController: UIViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.entriesTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,17 +38,60 @@ class EntriesViewController: UIViewController {
     @IBAction func addNewEntry(_ sender: Any) {
         performSegue(withIdentifier: "showEntry", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? NewEntriesViewController else {
+            return
+        }
+        
+        destination.trip = trip
+    }
+    
+    func deleteDocument(at indexPath: IndexPath) {
+        guard let trip = trip?.trips?[indexPath.row], let managedContext = trip.managedObjectContext else {
+            return
+        }
+        
+        managedContext.delete(trip)
+        
+        do {
+            try managedContext.save()
+            
+            entriesTableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch {
+            print("Could not delete entry")
+            
+            entriesTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    
 }
 
 extension EntriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return trip?.rawEntries?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = expensesTableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
+        let cell = entriesTableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as! entryTableViewCell
+        if let entry = trip?.rawEntries?[indexPath.row] {
+            cell.title.text = entry.name
+            cell.subtitle.text = entry.desc
+            
+            if let date = document.date {
+                cell.dateLabel?.text = dateFormatter.string(from: date)
+            }
+            
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteDocument(at: indexPath)
+        }
     }
 }
 

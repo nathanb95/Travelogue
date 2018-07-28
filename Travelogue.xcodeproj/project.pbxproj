@@ -16,6 +16,10 @@
 		49DD50E3210BDF5100BDB93D /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E0210BDF5000BDB93D /* EntriesViewController.swift */; };
 		49DD50E4210BDF5100BDB93D /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E1210BDF5000BDB93D /* NewTripViewController.swift */; };
 		49DD50E5210BDF5100BDB93D /* NewEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E2210BDF5100BDB93D /* NewEntriesViewController.swift */; };
+		49DD50EA210BE66300BDB93D /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E6210BE66300BDB93D /* Trip+CoreDataClass.swift */; };
+		49DD50EB210BE66300BDB93D /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E7210BE66300BDB93D /* Trip+CoreDataProperties.swift */; };
+		49DD50EC210BE66300BDB93D /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E8210BE66300BDB93D /* Entry+CoreDataClass.swift */; };
+		49DD50ED210BE66300BDB93D /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD50E9210BE66300BDB93D /* Entry+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		49DD50E0210BDF5000BDB93D /* EntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		49DD50E1210BDF5000BDB93D /* NewTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		49DD50E2210BDF5100BDB93D /* NewEntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntriesViewController.swift; sourceTree = "<group>"; };
+		49DD50E6210BE66300BDB93D /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		49DD50E7210BE66300BDB93D /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		49DD50E8210BE66300BDB93D /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		49DD50E9210BE66300BDB93D /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 				49DD50B0210BDABE00BDB93D /* Assets.xcassets */,
 				49DD50B2210BDABE00BDB93D /* LaunchScreen.storyboard */,
 				49DD50B5210BDABE00BDB93D /* Info.plist */,
+				49DD50E6210BE66300BDB93D /* Trip+CoreDataClass.swift */,
+				49DD50E7210BE66300BDB93D /* Trip+CoreDataProperties.swift */,
+				49DD50E8210BE66300BDB93D /* Entry+CoreDataClass.swift */,
+				49DD50E9210BE66300BDB93D /* Entry+CoreDataProperties.swift */,
 				49DD50AD210BDABB00BDB93D /* Travelogue.xcdatamodeld */,
 			);
 			path = Travelogue;
@@ -148,7 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DD50A7210BDABB00BDB93D /* AppDelegate.swift in Sources */,
+				49DD50EA210BE66300BDB93D /* Trip+CoreDataClass.swift in Sources */,
+				49DD50EB210BE66300BDB93D /* Trip+CoreDataProperties.swift in Sources */,
 				49DD50E3210BDF5100BDB93D /* EntriesViewController.swift in Sources */,
+				49DD50ED210BE66300BDB93D /* Entry+CoreDataProperties.swift in Sources */,
+				49DD50EC210BE66300BDB93D /* Entry+CoreDataClass.swift in Sources */,
 				49DD50E5210BDF5100BDB93D /* NewEntriesViewController.swift in Sources */,
 				49DD50E4210BDF5100BDB93D /* NewTripViewController.swift in Sources */,
 				49DD50AF210BDABB00BDB93D /* Travelogue.xcdatamodeld in Sources */,
