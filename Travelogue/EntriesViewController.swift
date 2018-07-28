@@ -74,12 +74,13 @@ extension EntriesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = entriesTableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as! entryTableViewCell
-        if let entry = trip?.rawEntries?[indexPath.row] {
-            cell.title.text = entry.name
-            cell.subtitle.text = entry.desc
-        }
+        let cell = entriesTableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as! UITableViewCell
         
+//        if let entry = trip?.rawEntries?[indexPath.row] {
+//            cell.textLabel?.text = entry.name
+//            cell.detailTextLabel?.text = entry.desc
+//        }
+//        
         return cell
     }
     
