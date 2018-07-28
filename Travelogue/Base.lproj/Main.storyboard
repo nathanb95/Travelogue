@@ -134,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="expenseCell" textLabel="j6N-2u-XVw" detailTextLabel="6aE-Tj-1q3" style="IBUITableViewCellStyleSubtitle" id="1vI-0E-bYh" userLabel="entryCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="entryCell" textLabel="j6N-2u-XVw" detailTextLabel="6aE-Tj-1q3" style="IBUITableViewCellStyleSubtitle" id="1vI-0E-bYh" userLabel="entryCell" customClass="entryTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1vI-0E-bYh" id="JW4-F0-Nsf">
@@ -159,10 +159,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="u0S-x3-qR8" id="b5Z-bx-PEq"/>
-                                    <outlet property="delegate" destination="u0S-x3-qR8" id="17O-HU-kRf"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,6 +175,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y8Y-xd-Yrv">
                             <connections>
                                 <action selector="addNewEntry:" destination="u0S-x3-qR8" id="7Zx-Df-sEf"/>
+                                <segue destination="Puk-RQ-0VB" kind="show" id="gXX-Ci-Jkl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -296,4 +293,7 @@
             <point key="canvasLocation" x="84" y="-546"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1oZ-QS-jrd"/>
+    </inferredMetricsTieBreakers>
 </document>

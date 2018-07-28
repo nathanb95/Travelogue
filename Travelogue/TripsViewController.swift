@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TripsViewController: UIViewController {
 
@@ -78,7 +79,7 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tripTableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
-        let category = trips[indexPath.row]
+        let trip = trips[indexPath.row]
         
         cell.textLabel?.text = trip.title
         

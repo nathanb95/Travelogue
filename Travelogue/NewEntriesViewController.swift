@@ -14,6 +14,8 @@ class NewEntriesViewController: UIViewController {
     @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var trip: Trip?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +35,21 @@ class NewEntriesViewController: UIViewController {
     }
     
     @IBAction func saveEntry(_ sender: Any) {
+        let name = titleText.text ?? ""
+        let desc = descriptionText.text ?? ""
+        let date = Date()
+        
+        if let entry = Entry(name: name, desc: desc, rawDate: date) {
+            trip?.addToRawEntries(entry)
+            
+            do {
+                try entry.managedObjectContext?.save()
+                
+                self.navigationController?.popViewController(animated: true)
+            } catch {
+                print("Could not save")
+            }
+        }
     }
 }
 

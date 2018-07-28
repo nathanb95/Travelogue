@@ -78,11 +78,6 @@ extension EntriesViewController: UITableViewDataSource {
         if let entry = trip?.rawEntries?[indexPath.row] {
             cell.title.text = entry.name
             cell.subtitle.text = entry.desc
-            
-            if let date = document.date {
-                cell.dateLabel?.text = dateFormatter.string(from: date)
-            }
-            
         }
         
         return cell
